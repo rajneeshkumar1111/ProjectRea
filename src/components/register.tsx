@@ -44,7 +44,7 @@ const Register = () => {
             {/* Buttons Section */}
             <div className="space-y-4">
               {/* Proceed Button */}
-              <Link href="#">
+              <Link href="/email">
                 <button
                   className="w-full h-[40px]  text-[14px] font-medium rounded-[10px] flex items-center justify-center gap-2 font-inter
                                    
