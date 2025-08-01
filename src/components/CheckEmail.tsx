@@ -69,9 +69,11 @@ const CheckEmail = () => {
                 </button>
               </Link>
 
+             <Link href="/register">
               <button className="w-full h-[40px] text-sm font-medium text-gray-700 bg-transparent hover:bg-gray-100 border border-transparent rounded-[10px]">
                 Go back
               </button>
+             </Link>
             </div>
           </div>
         </div>
