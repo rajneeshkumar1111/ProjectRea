@@ -40,7 +40,7 @@ const CheckEmail = () => {
             <p className="text-[32px] leading-[40px] font-medium tracking-[0] font-inter">
               Check your email
             </p>
-            <p className="text-[14px] leading-[20px] font-normal tracking-[-0.006em] font-['Inter'] px-4">
+            <p className="text-[14px] leading-[20px] font-normal tracking-[-0.006em] text-[#525866] font-inter px-4">
               Check your inbox for a 6-digit passcode to verify your email.
             </p>
           </div>

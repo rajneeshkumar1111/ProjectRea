@@ -22,23 +22,24 @@ export default function SimpleLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
- const [showModal, setShowModal] = useState(false);
-   const [activeTab, setActiveTab] = useState("account");
+  const [showModal, setShowModal] = useState(false);
+  const [activeTab, setActiveTab] = useState("account");
   const navItems = [
-    { href: "/dashboard/chatBox", icon: <IoChatbubbleEllipsesOutline  size={20} />, },
-    { href: "/dashboard/user", icon: <LuSquareUser  size={20} />,  },
-    { href: "/dashboard/notifications", icon: <FiBell size={20} />,  },
+    { href: "/dashboard/chatBox", icon: <IoChatbubbleEllipsesOutline size={20} />, },
+    { href: "/dashboard/user", icon: <LuSquareUser size={20} />, },
+    { href: "/dashboard/notifications", icon: <FiBell size={20} />, },
     { href: "/dashboard/chat", icon: <IoLayersOutline size={20} />, },
   ];
 
   const bottomItems = [
-    { href: "/dashboard", icon: <IoSettingsOutline size={20}   onClick={() => setShowModal(true)}/>, },
-    { href: "/dashboard/profile", icon: <FaRegUserCircle size={20} />,  },
+    { href: "/dashboard", icon: <IoSettingsOutline size={20} onClick={() => setShowModal(true)} />, },
+    { href: "/dashboard/profile", icon: <FaRegUserCircle size={20} />, },
+    
   ];
+   
 
 
-
-   const renderContent = () => {
+  const renderContent = () => {
     switch (activeTab) {
       case "account":
         return <Account />;
@@ -46,7 +47,7 @@ export default function SimpleLayout({
         return <General />;
       case "notifications":
         return <Notifications />;
-       case "DataControl":
+      case "DataControl":
         return <DataControl />;
       case "Security":
         return <Security />;
@@ -57,20 +58,33 @@ export default function SimpleLayout({
 
   return (
     <>
-   
-    <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
-      <aside className="w-16 h-screen sticky top-0 flex flex-col justify-between items-center py-4">
-        {/* Top section with logo and nav */}
-        <div className="flex flex-col items-center gap-6">
-          {/* Logo */}
-          <div className="w-10 h-10 flex items-center justify-center border rounded-md text-lg font-bold text-black">
-            R
+
+      <div className="flex min-h-screen bg-gray-100">
+        {/* Sidebar */}
+        <aside className="w-16 h-screen sticky top-0 flex flex-col justify-between items-center py-4">
+          {/* Top section with logo and nav */}
+          <div className="flex flex-col items-center gap-6">
+            {/* Logo */}
+            <div className="w-11 h-11 flex items-center gap-[10px] rounded-[14px] border: 1px solid var(--stroke-soft-200, #E2E4E9);  font-medium text-[24.79px] leading-[41.31px] tracking-[0%] text-center p-[12px] border bg-[#FFFFFF] border-gray-300 justify-center  text-lg  text-[#1B1B08]">
+             R
+            </div>
+
+            {/* Top navigation icons */}
+            <div className="flex flex-col items-center gap-6">
+              {navItems.map((item) => (
+                <SidebarItem
+                  key={item.href}
+                  href={item.href}
+                  icon={item.icon}
+                  active={pathname === item.href}
+                />
+              ))}
+            </div>
           </div>
 
-          {/* Top navigation icons */}
-          <div className="flex flex-col items-center gap-6">
-            {navItems.map((item) => (
+          {/* Bottom section */}
+          <div className="flex flex-col items-center gap-6 pt-4">
+            {bottomItems.map((item) => (
               <SidebarItem
                 key={item.href}
                 href={item.href}
@@ -79,27 +93,14 @@ export default function SimpleLayout({
               />
             ))}
           </div>
-        </div>
+        </aside>
 
-        {/* Bottom section */}
-        <div className="flex flex-col items-center gap-6 pt-4">
-          {bottomItems.map((item) => (
-            <SidebarItem
-              key={item.href}
-              href={item.href}
-              icon={item.icon}
-              active={pathname === item.href}
-            />
-          ))}
-        </div>
-      </aside>
-
-      {/* Main Content */}
-      <main className="flex-1 p-6 m-2 bg-white border border-gray-300 rounded-lg shadow overflow-y-auto">{children}</main>
-    </div>
-   {showModal && (
+        {/* Main Content */}
+        <main className="flex-1 p-6 m-2 bg-white border border-gray-300 rounded-lg shadow overflow-y-auto">{children}</main>
+      </div>
+      {showModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="relative w-full max-w-5xl bg-white rounded-xl border border-gray-200 shadow-md max-h-[90vh] flex flex-col overflow-hidden">
+          <div className="relative w-full max-w-[800px] bg-white rounded-xl border border-gray-200 shadow-md max-h-[90vh] flex flex-col overflow-hidden">
             <button
               className="absolute top-2 right-3 text-gray-600 hover:text-black text-2xl z-10"
               onClick={() => setShowModal(false)}
@@ -140,38 +141,38 @@ export default function SimpleLayout({
 
 
 
- <div
+                <div
                   className={`flex items-center gap-2 px-3 py-2 rounded-xl cursor-pointer ${activeTab === "DataControl" ? "bg-[#F6F8FA]" : "hover:bg-gray-100"
                     }`}
                   onClick={() => setActiveTab("DataControl")}
                 >
-                     <GoDatabase className="h-5 w-5" />
-                 <span className="text-sm font-medium text-[#868C98]">Data controls</span>
+                  <GoDatabase className="h-5 w-5" />
+                  <span className="text-sm font-medium text-[#868C98]">Data controls</span>
                 </div>
 
 
-              
-        
 
-   <div
+
+
+                <div
                   className={`flex items-center gap-2 px-3 py-2 rounded-xl cursor-pointer ${activeTab === "Security" ? "bg-[#F6F8FA]" : "hover:bg-gray-100"
                     }`}
                   onClick={() => setActiveTab("Security")}
                 >
-                 
-                    <AiOutlineSecurityScan className="h-5 w-5" />
+
+                  <AiOutlineSecurityScan className="h-5 w-5" />
                   <span className="text-sm font-medium text-[#868C98]">Security</span>
                 </div>
 
 
 
               </div>
-              <div className="w-full flex-1 p-5 overflow-y-auto">{renderContent()}</div>
+              <div className="w-full flex-1 p-0 overflow-y-auto">{renderContent()}</div>
             </div>
           </div>
         </div>
       )}
-     </>
+    </>
   );
 }
 
@@ -187,14 +188,13 @@ function SidebarItem({
   return (
     <Link
       href={href}
-      className={`w-10 h-10 flex items-center justify-center rounded-lg transition-colors ${
-        active
+      className={`w-10 h-10 flex items-center justify-center rounded-lg transition-colors ${active
           ? " text-orange-500"
           : "text-gray-500  hover:text-orange-500"
-      }`}
+        }`}
     >
       {icon}
     </Link>
   );
-  
+
 }

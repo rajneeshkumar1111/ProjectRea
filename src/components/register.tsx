@@ -37,7 +37,7 @@ const Register = () => {
               <input
                 type="email"
                 placeholder="Your email"
-                className="w-full h-[40px] px-4 rounded-[10px] border border-[#E2E4E9] shadow-[0px_1px_2px_0px_#E4E5E73D] outline-none text-[14px] font-['Inter']"
+                className="w-full h-[40px] px-4 rounded-[10px] border border-[#E2E4E9] shadow-[0px_1px_2px_0px_#E4E5E73D] outline-none text-[14px] font-inter tracking-[-0.006em]"
               />
             </div>
 

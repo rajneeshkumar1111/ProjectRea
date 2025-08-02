@@ -11,7 +11,7 @@ const Notification = () => {
           <div className="flex flex-col gap-3 w-full max-w-[200px]">
 
             {/* Icon */}
-            <div className="w-12 h-12 sm:w-16 sm:h-16">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 mt-5">
               <img src="/Frame 482111.png" alt="bell" className="w-full h-full object-contain" />
             </div>
 

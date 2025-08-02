@@ -4,11 +4,11 @@ const Account = () => {
   return (
 
     <div className="w-full max-w-[600px] mx-auto  py-6 space-y-6 border-b  bg-white ">
-      <div className="text-[20px] leading-[28px] font-medium font-inter ml-3">
+      <div className="text-[20px] leading-[28px] font-medium font-inter ml-3 pl-1">
         Account
       </div>
 
-      <div className="flex items-center gap-3 p-2 0 rounded-md">
+      <div className="flex items-center gap-3 p-2 0 rounded-md ml-2">
         <div className="w-16 h-16 rounded-full overflow-hidden">
           <img src="/Avatar [1.0] (1).png" alt="avatar" className="w-full h-full object-cover" />
         </div>
@@ -44,7 +44,7 @@ const Account = () => {
           </div>
         ))}
 
-        <div className=" p-4 rounded-md">
+        <div className=" pl-1 rounded-md">
           <p className="text-[14px] leading-[20px] tracking-[-0.6%] font-normal text-[#0A0D14] font-inter mb-2">
             Hello, I am Paul, originally known as Saul of Tarsus. I was a devout Pharisee and a zealous persecutor of early Christians.
             However, on my journey to Damascus, I experienced a profound vision of Jesus Christ, leading to my conversion. Following this,
