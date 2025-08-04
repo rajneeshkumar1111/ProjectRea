@@ -33,7 +33,7 @@ export default function CreateAccount1() {
             </button>
           </Link>
           <Link href="/login">
-            <button className="w-full h-11 bg-gradient-to-b from-[#fef7ec] to-[#fef3eb] text-black font-light ">
+            <button className="w-full  h-11 hover:bg-white   rounded-xl font-inter font-medium text-[14px] leading-[20px] tracking-[-0.006em] text-center text-[#525866] hover:text-[#20232D]">
               Existing user? Login
             </button>
           </Link>

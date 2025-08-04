@@ -3,8 +3,12 @@ import Link from 'next/link'
 const ForgotPass = () => {
   return (
     <>
-      <div className="w-full min-h-screen flex items-center justify-center bg-gray-100 px-4 py-8">
-        <div className="w-full max-w-[376px] bg-white/90 border border-[#E2E4E9] rounded-[24px] backdrop-blur-[24px] shadow-lg p-6 sm:p-8">
+      <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#fef7ec] to-[#fef3eb] px-4 py-8
+ flex-col
+      
+      ">
+        <div className="w-full max-w-[376px] bg-white/90 border border-[#E2E4E9] rounded-[24px] backdrop-blur-[24px] shadow-lg p-6 sm:p-8
+        ">
           {/* Top Section */}
           <div className="space-y-4">
             <p className="text-[28px] sm:text-[32px] text-[#0A0D14] sm leading-[40px] text-center font-inter font-medium">
@@ -59,6 +63,16 @@ const ForgotPass = () => {
             </div>
           </div>
         </div>
+           {/* Bottom Button */}
+
+      <div className="w-full max-w-[376px] mt-8">
+        <Link href="/register">
+        <button className="w-full hover:bg-white h-[40px] rounded-[10px] font-inter font-medium text-[14px] leading-[20px] tracking-[-0.006em] text-center text-[#525866] font-inter   ">
+          New user? <span className="text-[#0A0D14]">Create account</span>
+        </button>
+        </Link>
+      </div>
+\
       </div>
     </>
   )

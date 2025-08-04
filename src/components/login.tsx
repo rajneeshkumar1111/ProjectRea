@@ -3,7 +3,9 @@ import Link from 'next/link';
 
 const Login = () => {
   return (
-    <div className="min-h-screen w-full flex shadow-lg items-center justify-center bg-gray-100 px-4 py-10 relative">
+    
+    <div className="min-h-screen w-full flex shadow-lg items-center justify-center
+     bg-gradient-to-b from-[#fef7ec] to-[#fef3eb]  px-4  relative">
 
 
       <div className="w-full max-w-md bg-white border border-gray-300 rounded-3xl shadow-lg px-6 pt-20 pb-10 space-y-8 relative">
@@ -61,21 +63,22 @@ const Login = () => {
             <input
               type="submit"
               value="Log in"
-              className="w-full h-10 rounded-[10px] text-white font-medium bg-[#20232D] hover:bg-[#181A22] transition"
+              className="w-full h-10 rounded-[10px] text-white font-medium bg-[#20232D] hover:bg-[#181A22] transition mb-2"
             />
           </Link>
 
-          <div className="text-center">
-            <Link href="/forget">
-              <span className="text-md text-gray-500 hover:underline">
-                Forgot Password?
-              </span>
-            </Link>
-          </div>
+         <div className="flex items-center justify-center w-full h-10 rounded-[10px] text-white hover:bg-[#E2E4E9] font-medium  transition">
+  <Link href="/forget">
+    <span className="text-md text-[#525866] opacity-100 pr-[4px] pl-[4px] gap-[8px]  font-medium text-[14px] leading-[20px] tracking-[-0.006em] text-center text-inter">
+      Forgot Password?
+    </span>
+  </Link>
+</div>
         </div>
 
       </div>
     </div>
+
   );
 };
 

@@ -141,56 +141,15 @@ export default function Page14() {
         {/* Header container */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
           {/* Left side: Question */}
-          <div className="flex items-center gap-2">
-            <div className="text-[#0A0D14] text-sm md:text-base font-semilight">
-              Summarized question as header here
-            </div>
-          </div>
+       
 
           {/* Right side: New Chat + Share */}
           <div className="flex items-center gap-4 flex-wrap">
             {/* New Chat Button */}
-            <button
-              onClick={() => {
-                setMessages([]);
-                setHideGreeting(false);
-                setInput("");
-                setShowVoiceIcon(false);
-                setIsLoading(false);
-                setShouldHideSamples(false);
-                setIsBetterDivVisible(true);
-              }}
-              className="flex justify-center items-center gap-[2px] px-[12px] py-[6px] rounded-[8px] bg-[#20232D] text-white text-center font-inter text-[14px] font-medium leading-[20px] tracking-[-0.084px] shadow-[0px_1px_2px_rgba(82,88,102,0.06)] hover:opacity-80 transition"
-            >
-              New Chat
-            </button>
+    
 
             {/* Share Button */}
-            <div className="flex items-center gap-1 text-[#868C98] cursor-pointer hover:opacity-80 transition">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 14 14"
-                fill="none"
-              >
-                <path
-                  d="M6.4005 1.00134C3.96791 1.00572 2.69407 1.06544 1.87999 1.8795C1.00146 2.758 1.00146 4.17193 1.00146 6.99976C1.00146 9.82764 1.00146 11.2416 1.87999 12.12C2.75851 12.9986 4.17249 12.9986 7.00044 12.9986C9.82834 12.9986 11.2423 12.9986 12.1209 12.12C12.9349 11.306 12.9946 10.0322 12.999 7.59969"
-                  stroke="#868C98"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M12.6536 1.34505L8.9541 5.03438M12.6536 1.34505C12.3243 1.01538 10.1059 1.0461 9.63689 1.05278M12.6536 1.34505C12.9829 1.67472 12.9522 3.89557 12.9455 4.36507"
-                  stroke="#868C98"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-sm font-medium">Share</span>
-            </div>
+         
           </div>
         </div>
       </div>
@@ -209,12 +168,12 @@ export default function Page14() {
           >
             <div className="flex justify-between items-center  px-5 mb-1">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[#0A0D14] text-[28px] md:text-[32px] font-semibold leading-[40px] font-['Inter']">
+                <h3 className="text-[#0A0D14] text-[28px] md:text-[32px] font-semibold leading-[40px] font-inter">
                   Hello! 👋
                   <br />
                   Michael Angelo
                 </h3>
-                <p className="text-[#868C98] text-[16px] leading-[24px] font-normal tracking-[-0.176px]">
+                <p className="text-[#868C98] font-inter font-normal text-[16px] leading-[24px] tracking-[-0.011em] text-center   font-inter">
                   What can I help you with today?
                 </p>
               </div>
@@ -343,9 +302,7 @@ export default function Page14() {
     audio
     render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
       <div className="w-full rounded-md max-w-[600px] mx-auto">
-        <p>Status: {status}</p>
-        <button onClick={startRecording}>Start Recording</button>
-        <button onClick={stopRecording}>Stop Recording</button>
+    
 
         {mediaBlobUrl && (
           <audio
