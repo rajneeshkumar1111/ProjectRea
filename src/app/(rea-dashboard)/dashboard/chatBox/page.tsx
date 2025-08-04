@@ -132,8 +132,8 @@ export default function Page14() {
     <div
       className={
         isSamplesVisible || isBetterDivVisible || isRecording
-          ? "relative flex flex-col w-full px-4 py-6 bg-white min-h-screen font-['Inter']"
-          : "relative flex flex-col w-full px-4 py-6 bg-white h-full font-['Inter'] max-h-full"
+          ? "relative flex flex-col w-full px-4 py-6 bg-white min-h-screen font-inter"
+          : "relative flex flex-col w-full px-4 py-6 bg-white h-full font-inter max-h-full"
       }
     >
       {/* Header */}
@@ -168,7 +168,7 @@ export default function Page14() {
           >
             <div className="flex justify-between items-center  px-5 mb-1">
               <div className="flex flex-col gap-1">
-                <h3 className="text-[#0A0D14] text-[28px] md:text-[32px] font-semibold leading-[40px] font-inter">
+                <h3 className="text-[#0A0D14]  md:text-[32px] font-interDisplay font-medium text-[32px]  tracking-[0em] text-medium leading-[40px] font-inter">
                   Hello! 👋
                   <br />
                   Michael Angelo
