@@ -55,17 +55,18 @@ export default function Page14() {
     type: "outgoing", // ✅ exact literal
   };
 
-  const onStop = (recordedData: any) => {
-    const transcript = "Hello from voice input"; // Replace this with real STT logic
+ const onStop = (recordedData: Blob) => { // 👈 Proper type instead of any
+  const transcript = "Hello from voice input"; // Replace with real STT logic
 
-    const voiceMessage: Message = {
-      text: transcript,
-      type: "outgoing" as "outgoing", // ✅ make this a literal
-    };
-
-    setMessages((prev) => [...prev, voiceMessage]); // ✅ now works
-    setIsLoading(true);
+  const voiceMessage: Message = {
+    text: transcript,
+    type: "outgoing" as const, // 👈 Fix for prefer-as-const
   };
+
+  setMessages((prev) => [...prev, voiceMessage]); // ✅ works
+  setIsLoading(true);
+};
+
 
   useEffect(() => {
     if (messages.length > 0) {
@@ -337,27 +338,27 @@ export default function Page14() {
                       <span>{recordTime}s</span>
                     </div>
                     <VoicePitchGraph />
-                    <div className="flex-1">
-                      <ReactMediaRecorder
-                        audio
-                        render={({
-                          status,
-                          startRecording,
-                          stopRecording,
-                          mediaBlobUrl,
-                        }) => (
-                          <div className="w-full rounded-md max-w-[600px] mx-auto">
-                            {mediaBlobUrl && (
-                              <audio
-                                src={mediaBlobUrl}
-                                controls
-                                className="mb-1 w-full"
-                              />
-                            )}
-                          </div>
-                        )}
-                      />
-                    </div>
+                  <div className="flex-1">
+  <ReactMediaRecorder
+    audio
+    render={({ status, startRecording, stopRecording, mediaBlobUrl }) => (
+      <div className="w-full rounded-md max-w-[600px] mx-auto">
+        <p>Status: {status}</p>
+        <button onClick={startRecording}>Start Recording</button>
+        <button onClick={stopRecording}>Stop Recording</button>
+
+        {mediaBlobUrl && (
+          <audio
+            src={mediaBlobUrl}
+            controls
+            className="mb-1 w-full"
+          />
+        )}
+      </div>
+    )}
+  />
+</div>
+
                   </div>
                 )}
 
