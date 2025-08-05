@@ -139,61 +139,70 @@ const Data: React.FC = () => {
       )}
 
       {/* Bio Modal */}
-      {bioModal && selectedCharacter && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg w-full max-w-md shadow-lg relative">
-            <button
-              className="absolute top-2 right-3 text-gray-600 hover:text-black text-xl"
-              onClick={() => setBioModal(false)}
-            >
-              &times;
+{bioModal && selectedCharacter && (
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2 sm:p-4">
+    <div className="bg-white p-4 sm:p-6 rounded-lg w-full max-w-sm sm:max-w-md shadow-lg relative">
+      {/* Close Button */}
+      <button
+        className="absolute top-2 right-3 text-gray-600 hover:text-black text-xl"
+        onClick={() => setBioModal(false)}
+      >
+        &times;
+      </button>
+
+      {/* Name */}
+      <h6 className="text-lg sm:text-xl font-semibold mb-2 font-['Inter_Display']">
+        {selectedCharacter.name}
+      </h6>
+
+      {/* Image */}
+      <img
+        src={selectedCharacter.img}
+        alt={selectedCharacter.name}
+        className="w-full h-40 sm:h-48 object-contain mb-4 bg-[#603a27] rounded"
+      />
+
+      {/* About Section */}
+      <div className="w-full py-2 text-[#868C98] bg-[#F6F8FA] font-['Inter'] font-medium text-[10px] sm:text-[11px] leading-[12px] tracking-[2%] uppercase mb-2 text-center sm:text-left">
+        A LITTLE BIT ABOUT ME
+      </div>
+
+      {/* Bio */}
+      <p className="text-sm sm:text-[14px] text-[#0A0D14] font-['Inter'] tracking-[-0.6%] leading-[18px] sm:leading-[20px] font-medium">
+        {selectedCharacter.bio}
+      </p>
+
+      {/* Ask Me About */}
+      <div className="mt-4 space-y-2">
+        <p className="font-['Inter'] font-medium text-[10px] sm:text-[11px] leading-[12px] tracking-[2%] uppercase text-[#868C98]">
+          ASK ME ABOUT...
+        </p>
+        <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex-1 text-[#0A0D14] text-sm">
+            Transformation, Mission, Endurance, Purpose, Change
+          </div>
+
+          {/* Chat Button */}
+          <div className="flex items-center rounded-[10px] border overflow-hidden">
+            <button className="flex items-center justify-center flex-1 h-[40px] text-[13px] sm:text-[14px] leading-[20px] tracking-[-0.6%] font-normal font-['Inter'] text-[#0A0D14] px-2">
+              Chat with {selectedCharacter.name}
             </button>
-            <h6 className="text-xl font-semibold mb-2 font-['Inter_Display']">{selectedCharacter.name}</h6>
-            <img
-              src={selectedCharacter.img}
-              alt={selectedCharacter.name}
-              className="w-full h-48 object-contain mb-4 bg-[#603a27]"
-            />
-            <div className="w-full h-[12px] text-[#868C98] bg-[#F6F8FA] font-['Inter'] font-medium text-[11px] leading-[12px] tracking-[2%] uppercase mb-2">
-              A LITTLE BIT ABOUT ME
-            </div>
-            <p className="text-sm text-[#0A0D14] font-['Inter'] tracking-[-0.6%] leading-[20px] text-[14px] font-medium">
-              {selectedCharacter.bio}
-            </p>
-
-            <div className="w-full h-[60px] gap-[8px]">
-              <div className="w-full h-[12px]">
-                <p className="font-['Inter'] font-medium text-[11px] leading-[12px] tracking-[2%] uppercase text-[#868C98]">
-                  ASK ME ABOUT...
-                </p>
-              </div>
-              <div className="w-full h-[40px] gap-[8px] flex">
-                <div className="w-[284px] h-[40px] text-[#0A0D14]">
-                  Transformation, Mission, Endurance, Purpose, Change
-                </div>
-                <div className="w-[148px] h-[40px] rounded-[10px] border flex">
-                  <div className="w-full h-[20px] pr-[4px] pl-[4px]">
-                    <button className="flex items-center justify-between h-[40px] text-[14px] leading-[20px] tracking-[-0.6%] font-normal font-['Inter'] text-[#0A0D14]">
-                      Chat with {selectedCharacter.name}
-                    </button>
-                  </div>
-                  <div className="w-[20px] h-[20px] pt-[11px]">
-                    <img src="/arrow-right-s-line.png" alt="" />
-                  </div>
-                </div>
-
-                
-              </div>
-       
-            </div>
-
-            <div className="w-full h-[60px] flex justify-between pt-[14px] pr-[20px] pb-[14px] pl-[20px] border-t border-t-[#E2E4E9]">
-              <img src="/Buttons [1.0] (1).svg" alt="" />
-              <img src="/Buttons [1.0].svg" alt="" />
+            <div className="w-8 h-8 flex items-center justify-center">
+              <img src="/arrow-right-s-line.png" alt="" className="w-4 h-4" />
             </div>
           </div>
         </div>
-      )}
+      </div>
+
+      {/* Bottom Buttons */}
+      <div className="w-full flex justify-between pt-4 mt-4 border-t border-t-[#E2E4E9]">
+        <img src="/Buttons [1.0] (1).svg" alt="" className="w-8 sm:w-auto" />
+        <img src="/Buttons [1.0].svg" alt="" className="w-8 sm:w-auto" />
+      </div>
+    </div>
+  </div>
+)}
+
 
 
 
