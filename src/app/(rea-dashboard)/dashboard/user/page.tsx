@@ -178,25 +178,29 @@ const Data: React.FC = () => {
                     </button>
                   </div>
                   <div className="w-[20px] h-[20px] pt-[11px]">
-                    <img src="/arrow-right-s-line.svg" alt="" />
+                    <img src="/arrow-right-s-line.png" alt="" />
                   </div>
                 </div>
 
                 
               </div>
-              {/* <div className="w-full h-[60px] justify-between opacity-100 pt-[14px] pr-[20px] pb-[14px] pl-[20px]  bg-red-500 ">
-<div className="w-[32px] h-[32px] opacity-100 gap-[2px] rounded-[8px] p-[6px] bg-green-700"></div>
-                
-              </div> */}
+       
             </div>
 
             <div className="w-full h-[60px] flex justify-between pt-[14px] pr-[20px] pb-[14px] pl-[20px] border-t border-t-[#E2E4E9]">
               <img src="/Buttons [1.0] (1).svg" alt="" />
-              <img src="/Buttons [1.0] (2).svg" alt="" />
+              <img src="/Buttons [1.0].svg" alt="" />
             </div>
           </div>
         </div>
       )}
+
+
+
+
+
+
+      
     </>
   );
 };
