@@ -4,7 +4,7 @@ import Link from "next/link";
 const Login = () => {
   return (
     <>
-    
+        <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#fef7ec] to-[#fef3eb] px-4 py-10">
     <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#fef7ec] to-[#fef3eb] px-4">
       <div className="w-full max-w-[376px] bg-white border border-gray-300 rounded-3xl shadow-lg px-6 pt-20 pb-10 space-y-8 relative">
         
@@ -73,7 +73,15 @@ const Login = () => {
       </div>
 
     </div>
-    
+          {/* Bottom Button */}
+      <div className="w-full max-w-[376px] mt-8">
+        <Link href="/register">
+        <button className="w-full hover:bg-white h-[40px] rounded-[10px] font-inter font-medium text-[14px] leading-[20px] tracking-[-0.006em] text-center text-[#525866] font-inter   ">
+          New user? <span className="text-[#0A0D14]">Create account</span>
+        </button>
+        </Link>
+      </div>
+    </div>
 
       </>
   );
